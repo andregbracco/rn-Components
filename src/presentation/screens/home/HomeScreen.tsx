@@ -3,6 +3,7 @@ import {globalStyles} from '../../../config/theme/theme';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Title} from '../../components/ui/Title';
 import {MenuItem} from '../../components/ui/MenuItem';
+import {CustomView} from '../../components/ui/CustomView';
 
 const animationMenuItems = [
   {
@@ -70,7 +71,7 @@ const menuItems = [
 
 export const HomeScreen = () => {
   return (
-    <View style={[globalStyles.mainContainer]}>
+    <CustomView margin>
       <View style={globalStyles.globalMargin}>
         <ScrollView>
           <Title text="Opciones del menu" safe />
@@ -103,6 +104,6 @@ export const HomeScreen = () => {
           ))}
         </ScrollView>
       </View>
-    </View>
+    </CustomView>
   );
 };
