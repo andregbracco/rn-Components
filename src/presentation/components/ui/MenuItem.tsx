@@ -1,8 +1,9 @@
 import {View, Text, Pressable, StyleSheet} from 'react-native';
-import {colors} from '../../../config/theme/theme';
 import Icon from '@react-native-vector-icons/ionicons';
 import {useNavigation} from '@react-navigation/native';
-import { Separator } from './Separator';
+import {Separator} from './Separator';
+import React, {useContext} from 'react';
+import {ThemeContext} from '../../context/ThemeContext';
 
 interface Props {
   name: string;
@@ -20,6 +21,9 @@ export const MenuItem = ({
   isLast = false,
 }: Props) => {
   const navigation = useNavigation();
+
+  const {colors} = useContext(ThemeContext);
+
   return (
     <>
       <Pressable onPress={() => navigation.navigate(component as never)}>
@@ -53,7 +57,7 @@ export const MenuItem = ({
           />
         </View>
       </Pressable>
-      {!isLast && <Separator/>}
+      {!isLast && <Separator />}
     </>
   );
 };

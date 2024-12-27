@@ -5,7 +5,6 @@ import {CustomSwitch} from '../../components/ui/CustomSwitch';
 import {Separator} from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
-
   const [state, setState] = useState({
     isActive: true,
     isHungry: false,
